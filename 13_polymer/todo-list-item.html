@@ -1,0 +1,39 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id="todo-list-item">
+
+    <template>
+
+        <style>
+            /* local DOM styles go here */
+            :host {
+                display: list-item;
+            }
+
+            :host([completed]) {
+                text-decoration: line-through;
+            }
+        </style>
+
+        <!-- local DOM goes here -->
+        <div>
+            [[title]] <input type="checkbox" checked="{{completed::change}}">
+        </div>
+    </template>
+
+    <script>
+        Polymer({
+            is: 'todo-list-item',
+            properties: {
+                title: String,
+                completed: {
+                    type: Boolean,
+                    value: false,
+                    notify: true,
+                    reflectToAttribute: true
+                }
+            }
+        });
+    </script>
+
+</dom-module>

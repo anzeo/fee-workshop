@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Polymer Demo</title>
+    <link rel="import" href="todo-list.html">
+</head>
+<body unresolved>
+<template is="dom-bind" id="app">
+    <todo-list id="todoList" items="{{items}}"></todo-list>
+</template>
+
+
+<script>
+    (function(document) {
+        var app = document.querySelector('#app');
+
+        // The dom-change event signifies when the template has stamped its DOM.
+        app.addEventListener('dom-change', function () {
+            document.querySelector('body').removeAttribute('unresolved');
+
+            var todoList = document.getElementById('todoList');
+
+            todoList.items = [
+                {title: 'Finish Polymer Demo', completed: false},
+                {title: 'Climb the Kilimanjaro', completed: false},
+                {title: 'Make a TODO-list', completed: true}
+            ];
+        });
+    })(document);
+</script>
+</body>
+</html>
