@@ -1,5 +1,5 @@
-<form>
-    <input>
+<form (ngSubmit)="onSubmit()">
+    <input [(ngModel)]="newItemName">
     <button>Add</button>
 </form>
-<todo-list-item *ngFor="#item of items" [title]="item.title" [completed]="item.completed"></todo-list-item>
+<todo-list-item *ngFor="#item of items" [item]="item"></todo-list-item>

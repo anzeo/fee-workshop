@@ -1,5 +1,5 @@
 import {Component} from 'angular2/core';
-import {TodoList} from './todo-list';
+import {TodoListComponent} from './todo-list-component';
 
 @Component({
     selector: 'my-todo-app',
@@ -7,7 +7,7 @@ import {TodoList} from './todo-list';
         <h1>My ToDo Angular 2 App</h1>
         <todo-list [items]="items"></todo-list>
     `,
-    directives: [TodoList]
+    directives: [TodoListComponent]
 })
 export class TodoApp {
     public items = [
