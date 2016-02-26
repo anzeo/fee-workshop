@@ -1,0 +1,4 @@
+<template>
+    <require from="./todo-list-item"></require>
+    <todo-list-item repeat.for="item of items" title.bind="item.title" completed.bind="item.completed"></todo-list-item>
+</template>
