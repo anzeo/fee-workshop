@@ -52,5 +52,6 @@ Temporary Items
 .idea/
 node_modules/
 bower_components/
+typings/
 *.js
 !gulpfile.js
