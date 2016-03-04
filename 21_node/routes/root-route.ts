@@ -1,7 +1,7 @@
 export function getRoot(request, response){
     response.send({
         _links: {
-            items: '/item'
+            items: 'http://localhost:1337/item'
         }
     });
 }

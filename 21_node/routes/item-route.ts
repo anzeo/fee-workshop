@@ -8,7 +8,7 @@ export function getAllItems(request, response) {
     items.forEach((item) => {
         itemResources.push(createHyperMediaBuilder()
             .of(item)
-            .addSelfLink('/item/' + item.id));
+            .addSelfLink('http://localhost:1337/item/' + item.id));
     });
 
     response.send(createHyperMediaBuilder().of({}).addEmbeddedResource('items', items));
@@ -16,14 +16,14 @@ export function getAllItems(request, response) {
 
 export function createItem(request, response) {
     var newItem = ItemService.createItem(request.body.title);
-    response.send(createHyperMediaBuilder().of(newItem).addSelfLink('/item/' + newItem.id));
+    response.send(createHyperMediaBuilder().of(newItem).addSelfLink('http://localhost:1337/item/' + newItem.id));
 }
 
 export function updateItem(request, response) {
     var id = parseInt(request.params.id);
     try {
         ItemService.updateItem(id, request.body.completed);
-        response.status(201).end();
+        response.status(204).end();
     } catch (error) {
         response.status(404).end();
     }
