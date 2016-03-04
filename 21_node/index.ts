@@ -1,9 +1,12 @@
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import * as item from './routes/item-route';
+import * as root from './routes/root-route';
 
 var app = express();
 app.use(bodyParser.json());
+
+app.get('/', root.getRoot);
 
 app.get('/item', item.getAllItems);
 app.post('/item', item.createItem);
