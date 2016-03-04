@@ -1,0 +1,54 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-ajax/iron-ajax.html">
+
+<dom-module id="todo-list-item">
+
+    <template>
+
+        <style>
+            /* local DOM styles go here */
+            :host {
+                display: list-item;
+            }
+
+            :host([completed]) {
+                text-decoration: line-through;
+            }
+        </style>
+
+        <!-- local DOM goes here -->
+        <iron-ajax
+                id="UpdateItem"
+                method="PUT"
+                content-type="application/json"
+                handle-as="json"></iron-ajax>
+
+        <div>
+            <input type="checkbox" checked="{{completed::change}}" on-change="onCompletedToggle"> [[title]]
+        </div>
+    </template>
+
+    <script>
+        Polymer({
+            is: 'todo-list-item',
+            properties: {
+                title: String,
+                completed: {
+                    type: Boolean,
+                    value: false,
+                    notify: true,
+                    reflectToAttribute: true
+                },
+                uri: String
+            },
+            onCompletedToggle: function(){
+                this.$.UpdateItem.body = {
+                    "completed": !this.completed // TODO find a better way, possibly using an observable on completed?
+                };
+                this.$.UpdateItem.url = this.uri;
+                this.$.UpdateItem.generateRequest();
+            }
+        });
+    </script>
+
+</dom-module>
