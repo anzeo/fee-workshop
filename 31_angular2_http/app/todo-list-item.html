@@ -1,0 +1,3 @@
+<div [class.completed]="item.completed">
+    <input type="checkbox" [ngModel]="item.completed" (click)="onClick()" > {{item.title}}
+</div>
