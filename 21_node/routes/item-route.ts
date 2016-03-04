@@ -8,14 +8,15 @@ export function getAllItems(request, response) {
     items.forEach((item) => {
         itemResources.push(createHyperMediaBuilder()
             .of(item)
-            .addSelfLink('/item'));
+            .addSelfLink('/item/' + item.id));
     });
 
     response.send(createHyperMediaBuilder().of({}).addEmbeddedResource('items', items));
 }
 
 export function createItem(request, response) {
-    response.send(ItemService.createItem(request.body.title));
+    var newItem = ItemService.createItem(request.body.title);
+    response.send(createHyperMediaBuilder().of(newItem).addSelfLink('/item/' + newItem.id));
 }
 
 export function updateItem(request, response) {
