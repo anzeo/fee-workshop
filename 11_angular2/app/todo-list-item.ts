@@ -1,3 +1,3 @@
 export class TodoListItem {
-    constructor(public title: string, completed?: boolean){}
+    constructor(public title: string, public completed?: boolean){}
 }
