@@ -1,4 +1,4 @@
-import {TodoListItem} from '../models/item';
+import {TodoListItem} from '../models/item-model';
 
 var nextItemId = 1;
 var items: Array<TodoListItem> = [];

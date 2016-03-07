@@ -7,8 +7,6 @@ export class TodoListItemsService {
     private defaultHeaders;
 
     constructor(private http:Http) {
-        this.http = http;
-
         this.defaultHeaders = new Headers();
         this.defaultHeaders.append('Content-Type', 'application/json');
     }

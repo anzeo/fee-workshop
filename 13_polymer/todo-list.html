@@ -17,7 +17,6 @@
             <input value="{{newItemName::input}}">
             <button type="button" on-click="addItem">Add</button>
         </form>
-        <div></div>
         <template is="dom-repeat" items="{{items}}">
             <todo-list-item title="{{item.title}}" completed="{{item.completed}}"></todo-list-item>
         </template>
