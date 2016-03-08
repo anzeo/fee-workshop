@@ -3,13 +3,13 @@ var ts = require('gulp-typescript');
 var browserSync = require('browser-sync');
 
 gulp.task('ts', function(){
-    return gulp.src(['app/*.ts', 'typings/**/*'])
+    return gulp.src(['app/*.ts', 'jspm_packages/**/*.d.ts'])
         .pipe(ts({
             module: 'system',
             moduleResolution: "node",
             experimentalDecorators: true,
             emitDecoratorMetadata: true,
-            target: 'ES5'
+            target: 'ES6'
         }))
         .pipe(gulp.dest('./app/'))
         .pipe(browserSync.stream());    // Notify browserSync AFTER the TypeScript files have been compiled
