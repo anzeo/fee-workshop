@@ -1,17 +1,15 @@
-describe("A spec (with setup and tear-down)", function() {
-    var foo;
-
-    beforeEach(function() {
-        foo = 0;
-        foo += 1;
+describe("An add function", () => {
+    it("can add 2 integers", ()=> {
+        expect(add(1,1)).toEqual(2);
+        expect(add(2,3)).toEqual(5);
     });
 
-    afterEach(function() {
-        foo = 0;
-    });
+    it("can not add string values", ()=> {
+        expect(add(1,"1")).not.toEqual(2);
+        expect(add("2",3)).not.toEqual(5);
 
-    it("can have more than one expectation", function() {
-        expect(foo).toEqual(1);
-        expect(true).toEqual(true);
+        expect(add(1,"1")).toEqual("11");
+        expect(add("2",3)).toEqual("23");
     });
 });
+
