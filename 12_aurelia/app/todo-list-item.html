@@ -1,4 +1,4 @@
-<template>
+<template class="${completed ? 'completed' : ''}">
     <require from="./todo-list-item.css"></require>
     <input type="checkbox" checked.bind="completed"> ${title}
 </template>
