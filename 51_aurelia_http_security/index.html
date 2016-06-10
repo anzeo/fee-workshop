@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+    <title>Ex 5.1: Aurelia with HTTP and CSP</title>
+    <meta http-equiv="Content-Security-Policy"
+          content="
+            default-src 'self';
+            script-src 'self' 'unsafe-inline' 'unsafe-eval';
+            connect-src 'self' ws://localhost:9000/browser-sync/ http://localhost:1337;
+            style-src 'self' 'unsafe-inline'">
+</head>
+<body aurelia-app>
+<h1>Loading...</h1>
+
+<script src="jspm_packages/system.js"></script>
+<script src="config.js"></script>
+<script>
+    System.import('aurelia-bootstrapper');
+</script>
+</body>
+</html>

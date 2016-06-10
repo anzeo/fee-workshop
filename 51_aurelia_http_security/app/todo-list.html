@@ -1,0 +1,7 @@
+<template>
+    <require from="./todo-list-item"></require>
+    <form submit.trigger="submit()">
+        <input value.bind="newItemName" required placeholder="Add a new item">
+    </form>
+    <todo-list-item repeat.for="item of items" item.bind="item"></todo-list-item>
+</template>
