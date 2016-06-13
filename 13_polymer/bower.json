@@ -2,7 +2,7 @@
   "name": "13_polymer",
   "homepage": "https://github.com/anzeo/fee-workshop",
   "description": "",
-  "main": "",
+  "main": "index.js",
   "moduleType": [],
   "license": "MIT",
   "private": true,
@@ -14,6 +14,6 @@
     "tests"
   ],
   "dependencies": {
-    "polymer": "^1.2.4"
+    "polymer": "Polymer/polymer#^1.5.0"
   }
 }
