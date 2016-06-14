@@ -8,12 +8,12 @@ export class TodoListItemsService {
     }
 
     getItems() {
-        return this.http.fetch('http://localhost:1337/item')
+        return this.http.fetch('http://localhost/item')
             .then(response => response.json());
     }
 
     createItem(newItemName:string) {
-        return this.http.fetch('http://localhost:1337/item', {
+        return this.http.fetch('http://localhost/item', {
             method: 'POST',
             body: json({
                 "title": newItemName

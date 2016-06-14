@@ -17,7 +17,8 @@ app.get('/', root.getRoot);
 app.get('/item', item.getAllItems);
 app.post('/item', item.createItem);
 app.put('/item/:id', item.updateItem);
+app.get('/item/:id', item.getItem);
 
-app.listen(1337, () => {
-   console.log('Node server up & running @ http://localhost:1337');
+app.listen(80, () => {
+   console.log('Node server up & running @ http://localhost:80');
 });

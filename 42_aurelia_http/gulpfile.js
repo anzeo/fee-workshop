@@ -3,7 +3,7 @@ var ts = require('gulp-typescript');
 var browserSync = require('browser-sync');
 
 gulp.task('ts', function(){
-    return gulp.src(['app/*.ts', 'typings/**/*'])
+    return gulp.src(['app/*.ts', 'jspm_packages/**/*.d.ts'])
         .pipe(ts({
             module: 'system',
             moduleResolution: "node",
@@ -17,7 +17,7 @@ gulp.task('ts', function(){
 
 gulp.task('serve', ['ts'], function(done) {
     browserSync({
-        open: false,
+        open: true,
         port: 9000,
         server: {
             baseDir: ['.'],

@@ -5,8 +5,11 @@
     <meta http-equiv="Content-Security-Policy"
           content="
             default-src 'self';
-            script-src 'self' 'unsafe-inline' 'unsafe-eval';
-            connect-src 'self' ws://localhost:9000/browser-sync/ http://localhost:1337;
+            script-src 'self'
+                        'sha256-jwM2ScJG3Uy7SbUP9ffoGqJv6vbYg0QTUkyPlv6GyZk='
+                        'sha256-26uU0a2EVRtH/GokQUq7Dp2liMdG8bHtNb2hixzjmo0='
+                        'unsafe-eval';
+            connect-src 'self' ws://localhost:9000/browser-sync/ http://localhost;
             style-src 'self' 'unsafe-inline'">
 </head>
 <body aurelia-app>
